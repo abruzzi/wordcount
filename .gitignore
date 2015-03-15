@@ -1,1 +1,3 @@
 lib/scripts/
+node_modules/
+package.json
