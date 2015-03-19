@@ -16,21 +16,12 @@ function wordCount(array) {
     .value();
 }
 
-function convert(wordMap) {
-    return _(wordMap).map(function(value, key) {
-            return {
-                "text": key,
-                "size": value
-            };
-        });
-}
-
 function sortByCount(wordMap) {
     return _.chain(wordMap)
         .map(function(value, key) {
             return {
                 "text": key,
-                "size": Math.round(value / 10)
+                "size": Math.round(value*0.4)
             };
         })
         .sortBy("size")
@@ -38,7 +29,7 @@ function sortByCount(wordMap) {
         .value();
 }
 
-fs.readFile('./seg-titles.json', 'utf8', function(err, data) {
+fs.readFile('./icodeit-seg-titles.json', 'utf8', function(err, data) {
 	if (err) {
 		return console.log(err);
 	}
